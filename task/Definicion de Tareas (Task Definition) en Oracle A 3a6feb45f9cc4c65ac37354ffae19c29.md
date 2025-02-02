@@ -10,6 +10,14 @@
 - Asignación de responsables para completar la tarea.
 - Agrega parámetros.
 - Configuración de Acciones en la Tarea.
+    -   Enviar Notificación Push: Send Push Notification
+    -   On Event: Especificación de Eventos para Ejecutar Acciones
+    -   Success Message
+    -   Error Handling
+    -   Stop Execution On Error
+    -   Log Messages When
+    -   Server Side Condition
+- Runtime Views for Tasks
 - Conclusión.
 
 ## Inicio
@@ -246,6 +254,23 @@ Si deseas que la acción solo se ejecute cuando el usuario actual sea **USER_ONE
 
 Si el usuario que ejecuta la tarea es **USER_ONE**, la acción será ejecutada; de lo contrario, no lo será.
 
+# **Runtime Views for Tasks**  
+
+Aprende sobre las vistas `APEX_TASKS`, `APEX_TASK_COMMENTS`, `APEX_TASK_HISTORY`, `APEX_TASK_PARAMETERS` y `APEX_TASK_PARTICIPANTS`.
+
+# **Runtime Views for Tasks**  
+
+Oracle APEX nos proporciona varias vistas que almacenan la configuración de las definiciones de tareas dentro de una aplicación en Oracle APEX, el propósito de estas vistas es acceder a información histórica de una definición de tarea o varias que han sido definidas, que son las siguientes:
+
+| **Vista**                      | **Descripción**  |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `APEX_TASKS`                   | Propiedades de cada instancia de tarea.  |
+| `APEX_TASK_COMMENTS`           | Todos los comentarios ingresados en cada instancia de tarea.  |
+| `APEX_TASK_HISTORY`            | Serie cronológica de operaciones realizadas en una tarea, incluyendo el usuario y la fecha de actualización.  |
+| `APEX_TASK_PARAMETERS`         | Parámetros definidos en una tarea junto con sus valores en tiempo de ejecución en formato String.  |
+| `APEX_TASK_PARTICIPANTS`       | Lista de participantes en una tarea. Puede diferir de la lista original si los administradores agregan o eliminan participantes. |
+
+
 ## Conclusión
 
-La configuración de **Task Definitions** en Oracle APEX es una herramienta poderosa para gestionar flujos de trabajo, asegurando que las tareas se manejen de manera eficiente y automatizada. A través de esta funcionalidad, puedes asignar tareas a diferentes participantes, establecer plazos de vencimiento, definir acciones específicas y controlar el comportamiento de las tareas con condiciones precisas.
+En resumen, Task Definitions es útil cuando se busca gestionar flujos de trabajo de manera eficiente, asignando tareas, controlando plazos y acciones, y garantizando un seguimiento preciso de las tareas dentro de un proceso automatizado.
