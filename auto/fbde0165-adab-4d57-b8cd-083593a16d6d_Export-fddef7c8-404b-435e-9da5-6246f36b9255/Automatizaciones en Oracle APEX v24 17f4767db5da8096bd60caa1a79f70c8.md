@@ -22,6 +22,7 @@ Funciona como una interfaz simplificada y potente para programar acciones autom�
 
 Para esta guía es una continuación de **Definicion de Tareas en Oracle APEX v24 Parte I,** por lo tanto, utilizaremos la aplicación **Blog - Task Definition. Una vez que estemos en la aplicación accedemos a Shared Components** y selecciona **Automations** (Automatización).
 
+![image.png](image%200.png)
 ![image.png](image.png)
 
 Después de hacer clic en **Automations,** selecciona **Create** para iniciar la creación de una automatización nueva.
