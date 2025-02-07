@@ -3,13 +3,14 @@
 ## Contenido
 
 - Introducción
-- Creación de una automatización.
+- Creación de una automatización
     - Explicación Detallada de los Campos en “Create Automation”
-- Configura tu Automatización.
+- Configura tu Automatización
     - Explicación de los Campos
 - Configuración de Acciones en la Automatización
-    - **Manejo de Errores en Automatizaciones**
-    - Server Side Condition (Condición del Lado del Servidor)
+    - Manejo de Errores en Automatizaciones
+    - Condición del Lado del Servidor
+- Descripción de las vistas en Automatización
 - Conclusión
 
 ## Introducción
@@ -133,6 +134,15 @@ La opción **Server Side Condition** en automatizaciones permite agregar una con
 La opción **Do not validate code (parse at runtime only)** en la **Server Side Condition** permite que el código de la condición no se valide en tiempo de diseño, sino que se valide en el momento de la ejecución, lo que puede ser útil cuando el código depende de condiciones dinámicas o datos que solo se conocen durante la ejecución.
 
 La opción **Execute For Each Row** especifica si la condición debe ejecutarse para cada fila de datos que devuelve la consulta o solo una vez. Si se selecciona esta opción, la condición se evaluará por cada fila individualmente, lo que permite una mayor flexibilidad y control sobre las acciones que se ejecutan en función de los datos específicos de cada fila.
+
+#Descripción de las vistas en Automatización
+
+| **Nombre de la Vista**               | **Descripción** |
+|--------------------------------------|----------------|
+| **APEX_APPL_AUTOMATIONS** | Almacena los metadatos de las automatizaciones en una aplicación. Contiene información como el nombre de la automatización, la aplicación a la que pertenece, si está activa, y su fecha de creación. |
+| **APEX_APPL_AUTOMATION_ACTIONS** | Guarda las acciones que se ejecutan dentro de cada automatización. Por ejemplo, enviar correos, actualizar registros o ejecutar procesos. Cada acción pertenece a una automatización específica. |
+| **APEX_AUTOMATION_LOG** | Registra las ejecuciones de automatizaciones. Muestra cuándo se ejecutó, si fue exitosa o falló, y puede almacenar mensajes adicionales sobre la ejecución. |
+| **APEX_AUTOMATION_MSG_LOG** | Almacena los mensajes generados durante la ejecución de una automatización. Pueden ser mensajes de información, advertencias o errores. Se relacionan con un registro específico en `APEX_AUTOMATION_LOG`. |
 
 ## Conclusión
 
