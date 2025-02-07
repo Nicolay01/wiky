@@ -135,7 +135,7 @@ La opción **Do not validate code (parse at runtime only)** en la **Server Side 
 
 La opción **Execute For Each Row** especifica si la condición debe ejecutarse para cada fila de datos que devuelve la consulta o solo una vez. Si se selecciona esta opción, la condición se evaluará por cada fila individualmente, lo que permite una mayor flexibilidad y control sobre las acciones que se ejecutan en función de los datos específicos de cada fila.
 
-#Descripción de las vistas en Automatización
+## Descripción de las vistas en Automatización
 
 | **Nombre de la Vista**               | **Descripción** |
 |--------------------------------------|----------------|
