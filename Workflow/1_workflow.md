@@ -50,7 +50,9 @@ Al moverlo a **Activo**, la versión activa anterior pasa a **Inactiva**.
 Es importante tener en cuenta que un flujo de trabajo puede tener varios parámetros de distintos tipos de datos.  
 Estos se pueden definir dentro del flujo de trabajo haciendo clic derecho sobre el flujo de trabajo.  
 ![](image6.png)
+
 Al crear un parametro nos aparecera al lado izquierdo los atributos disponibles para el parametro
+
 ![](image7.png)
 | **Parámetro**         | **Descripción** |
 |-----------------------|----------------|
