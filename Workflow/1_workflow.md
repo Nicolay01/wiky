@@ -14,12 +14,12 @@
    - 4.4.2 Workflow Runtime Views
 5. **Conclusión**  
 
-# 1. Introducción  
+## 1. Introducción  
 Workflow, o flujo de trabajo, es la forma en que se organizan y ejecutan las tareas dentro de un proceso.  
 Permite automatizar actividades y visualizar su progreso en tiempo real.  
 En este blog, exploraremos su importancia y funcionamiento.  
 
-# 2. Crea un flujo de trabajo en tu Workspace en Oracle APEX  
+## 2. Crea un flujo de trabajo en tu Workspace en Oracle APEX  
 Esta guía es una continuación de *Automatización en Oracle APEX v24 - Parte I*, por lo que utilizaremos la aplicación **Blog - Task Automation**. Una vez dentro de la aplicación, accedemos a **Shared Components** y seleccionamos **Automations**.  
 ![Blog - Task Definition](image1.png)
 ![](image2.png)
@@ -28,7 +28,7 @@ Después de hacer clic en Workflow, selecciona Create para iniciar la creación 
 Después de crear nuestro flujo de trabajo, debemos asignarle una identificación en los campos **Name** y **Title**.  
 En nuestro caso, es **Blog - WorkFlow**.  
 
-## 2.1 Versiones de Flujo de Trabajo  
+### 2.1 Versiones de Flujo de Trabajo  
 Una versión de Workflow puede estar en tres estados: **En desarrollo**, **Activa** o **Inactiva**.  
 
 - **En desarrollo**: Es editable y solo se puede ejecutar en la sesión del desarrollador. Solo puede haber una versión en desarrollo.  
@@ -46,7 +46,7 @@ Al moverlo a **Activo**, la versión activa anterior pasa a **Inactiva**.
 | **Advance**        | **Debug Level**: Define el nivel de depuración del flujo de trabajo. <br> - **Info**: Nivel predeterminado, sin detalles específicos. <br> - **Warning**: Registra advertencias sin interrumpir el flujo. <br> - **Error**: Registra errores críticos que detienen el proceso. <br> - **Trace**: Nivel más detallado, registra funciones y procedimientos. |
 | **Comments**       | **Comments**: Permite agregar notas visibles solo en el **App Builder**. Útil para documentar el flujo de trabajo. |
 
-# 3. Parámetros
+## 3. Parámetros
 Es importante tener en cuenta que un flujo de trabajo puede tener varios parámetros de distintos tipos de datos.  
 Estos se pueden definir dentro del flujo de trabajo haciendo clic derecho sobre el flujo de trabajo.  
 ![](image6.png)
@@ -61,7 +61,7 @@ Al crear un parametro nos aparecera al lado izquierdo los atributos disponibles 
 | **Default Value**    | El valor predeterminado que se utilizará si no se proporciona otro valor al ejecutar el flujo de trabajo. Evita errores si el parámetro no se establece explícitamente. |
 | **Additional Information** | **Type:** Campo de texto para ingresar información adicional sobre el parámetro. <br> **Supported Substitutions:** Se pueden usar valores dinámicos de la aplicación, elementos de la página y variables del sistema dentro del parámetro, ofreciendo flexibilidad. |
 
-# 4. Actividades
+## 4. Actividades
 Flujo de trabajos pueden tener varias actividades como enviar correo electrónico o una definición de tarea, continuacion presentaremos las actividades disponibles:
 | **Actividad**              | **Descripción** |
 |---------------------------|----------------|
@@ -76,14 +76,14 @@ Flujo de trabajos pueden tener varias actividades como enviar correo electrónic
 | **Send Email**          | Envía un correo electrónico como parte del flujo de trabajo, útil para notificar a usuarios o sistemas sobre eventos específicos. |
 | **Send Push Notification** | Envía una notificación push a una aplicación o dispositivo móvil asociado. Se usa para alertar a los usuarios en tiempo real sobre acciones o cambios en el flujo de trabajo. |
 
-## 4.1. Activity Variables en APEX Workflows  
+### 4.1. Activity Variables en APEX Workflows  
 Cada actividad en un Workflow puede manejar **Activity Variables**, que son valores asociados a la actividad y pueden utilizarse para:
 
 - **Guardar información temporalmente**, como el estado de una tarea.  
 - **Pasar datos entre actividades**, como el usuario asignado a una tarea.  
 - **Determinar condiciones en un Workflow Switch**, permitiendo definir qué camino seguir. 
 
-## 4.2. Opciones para Crear Actividades en un Workflow
+### 4.2. Opciones para Crear Actividades en un Workflow
 Al diseñar un flujo de trabajo, APEX permite agregar nuevas actividades en diferentes posiciones dentro del diagrama:
 
 1. **Create Activity Below**  
@@ -99,7 +99,7 @@ Al diseñar un flujo de trabajo, APEX permite agregar nuevas actividades en dife
    - Permite conectar actividades entre sí para definir el orden de ejecución.  
    - No se puede conectar a **Workflow End**, ya que esta actividad no permite conexiones posteriores.  
 
-### 4.2.1 Reglas de Conexión entre Actividades
+#### 4.2.1 Reglas de Conexión entre Actividades
 
 | Desde → Hacia                        | ¿Es posible? | Notas |
 |--------------------------------------|-------------|------------------------------------------------|
@@ -111,7 +111,7 @@ Al diseñar un flujo de trabajo, APEX permite agregar nuevas actividades en dife
 | **Send Email → Otra actividad** | ✅ Sí | Después de una notificación, el flujo puede continuar. |
 | **Execute Code → Otra actividad** | ✅ Sí | El flujo continúa después de ejecutar código PL/SQL. |
 
-## 4.3. Roles en Workflows y Tareas en Oracle APEX
+### 4.3. Roles en Workflows y Tareas en Oracle APEX
 En Oracle APEX, los roles en Workflows determinan qué acciones puede realizar cada usuario dentro de una instancia de flujo de trabajo.
 
 ### Principales Roles:
@@ -121,14 +121,14 @@ En Oracle APEX, los roles en Workflows determinan qué acciones puede realizar c
 - **Workflow Administrators**  
   - Tienen permisos avanzados para suspender, reanudar y modificar variables de un Workflow en ejecución.  
 
-## 4.4. Vistas de Workflow en Oracle APEX
+### 4.4. Vistas de Workflow en Oracle APEX
 Las vistas de Workflow en Oracle APEX permiten acceder a información sobre la definición, ejecución y monitoreo de Workflows en la base de datos.  
 
 Se dividen en:  
 - **Metadata Views (Vistas de Metadatos)**: Contienen información sobre la estructura y configuración de los Workflows.  
 - **Runtime Views (Vistas en Tiempo de Ejecución)**: Proporcionan datos sobre la ejecución y el estado actual de los Workflows en ejecución.  
 
-### 4.4.1 Workflow Metadata Views
+#### 4.4.1 Workflow Metadata Views
 | Vista | Descripción |
 |-------------------------------|--------------------------------------------------------------------------------------------|
 | `APEX_APPL_WORKFLOWS` | Contiene las definiciones de workflows en la aplicación, incluyendo el ID estático del workflow. |
@@ -142,7 +142,7 @@ Se dividen en:
 | `APEX_APPL_WORKFLOW_PARTICIPANT` | Define los participantes del workflow (usuarios o roles que pueden interactuar con él). |
 | `APEX_APPL_WORKFLOW_COMP_PARAMS` | Almacena los parámetros de componentes utilizados en el Page Designer para configurar workflows. |
 
-### 4.4.2 Workflow Runtime Views
+#### 4.4.2 Workflow Runtime Views
 Estas vistas almacenan información sobre la ejecución y el estado actual de los workflows en la aplicación.
 | Vista | Descripción |
 |-------------------------------|--------------------------------------------------------------------------------------------|
@@ -154,7 +154,7 @@ Estas vistas almacenan información sobre la ejecución y el estado actual de lo
 | `APEX_WORKFLOW_PARTICIPANTS` | Muestra los usuarios o roles asignados a tareas activas en workflows en ejecución. |
 | `APEX_WORKFLOW_AUDIT` | Registra un historial de auditoría de workflows, incluyendo cambios y transiciones. |
 
-# 5. Conclusión
+## 5. Conclusión
 En resumen, **Workflows en Oracle APEX** nos permiten automatizar y estructurar procesos empresariales, facilitando la administración de flujos de trabajo con:  
 
 - **Tareas humanas**, asignadas a usuarios específicos.  
