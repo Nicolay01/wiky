@@ -4,8 +4,6 @@
 
 - Introducción.
 - Crea una aplicación en tu WorkSpace en Oracle APEX.
-- Creación de una Definición de Tarea.
-- Configura tu Tarea.
 - Especifica el Plazo de tu Tarea.
 - Asignación de responsables para completar la tarea.
 - Agrega parámetros.
