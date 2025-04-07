@@ -253,7 +253,7 @@ Si deseas que la acción solo se ejecute cuando el usuario actual sea **USER_ONE
 Si el usuario que ejecuta la tarea es **USER_ONE**, la acción será ejecutada; de lo contrario, no lo será.
 
 
-# 7. Runtime Views for Tasks  
+## 7. Runtime Views for Tasks  
 
 Oracle APEX nos proporciona varias vistas que almacenan la configuración de las definiciones de tareas dentro de una aplicación en Oracle APEX, el propósito de estas vistas es acceder a información histórica de una definición de tarea o varias que han sido definidas, que son las siguientes:
 
