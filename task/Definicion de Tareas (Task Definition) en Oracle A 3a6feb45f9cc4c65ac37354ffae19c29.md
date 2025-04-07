@@ -18,11 +18,11 @@
 7. Runtime Views for Tasks  
 8. Conclusión.
 
-## Inicio
+## 1. Introducción
 
 La funcionalidad Task Definition fue introducida en la versión 22.1 de Oracle APEX. Esta característica permite definir tareas que son iniciadas por un usuario y aprobadas o rechazadas por otro. En esta guía aprenderás a crear una tarea y a implementarla en tus aplicaciones.
 
-## Crea una aplicación en tu WorkSpace en Oracle APEX
+## 2. Crea una aplicación en tu WorkSpace en Oracle APEX
 
 Antes de crear un **Task Definition**, primero crearemos una aplicación en nuestro espacio de trabajo de Oracle APEX.
 
@@ -88,7 +88,7 @@ Otro campo opcional es **Task Details Page Number**, que permite generar una pá
 
 Si te preguntas qué representan **&EMPLOYEE_NAME**, **&OLD_SALARY** o **&NEW_SALARY**, estos son valores dinámicos provenientes de columnas de una consulta SQL. Para utilizarlos, es necesario seleccionar la opción **SQL Query** o **Table**. También pueden ser parámetros definidos dentro de la tarea.
 
-## Especifica el plazo de tu tarea
+## 3. Especifica el plazo de tu tarea
 
 En un **Task Definition** es posible establecer un plazo de vencimiento para la tarea. Al momento de crearla, el campo **Due On Type** se configura por defecto en **None**, lo que indica que la tarea no tiene un límite de tiempo definido. Esto significa que la tarea permanecerá activa indefinidamente hasta que sea aprobada o rechazada.
 
@@ -100,7 +100,7 @@ La opción **Interval** utiliza el formato **Interval ISO** (según la norma ISO
 
 En cuanto a la **Expiration Policy**, su valor predeterminado es **None**, pero podemos modificarlo a **Expire** o **Renew.** Si seleccionamos **Expire**, la tarea entrará en un estado de vencimiento a una vez que haya pasado el plazo establecido. Si elegimos **Renew,** podemos configurar cuántas veces se puede renovar la tarea antes de que entre en estado de vencimiento.
 
-## Asignación de responsables para completar la tarea.
+## 4. Asignación de responsables para completar la tarea.
 
 Para que una tarea sea efectiva, es esencial asignar uno o más participantes que podrán iniciar, reclamar, aprobar o rechazar la tarea. Los **participantes** pueden ser asignados de acuerdo con los roles y permisos establecidos en la tarea, como **Potential Owner** o **Business Administrator**.
 
@@ -120,7 +120,7 @@ Además, podemos especificar qué usuarios estarán involucrados en el flujo de 
 
 Estas opciones de **Value Type** ofrecen flexibilidad para determinar de manera dinámica los participantes que podrán **reclamar, aprobar, rechazar o administrar** las tareas.
 
-## Agrega parámetros
+## 5. Agrega parámetros
 
 Es posible añadir **parámetros** a la tarea para personalizar la información que se utiliza en el **Subject** o en las **acciones** asociadas a la tarea. Los parámetros proporcionan un mecanismo flexible para pasar valores dinámicos que pueden cambiar según el contexto de cada tarea.
 
@@ -145,7 +145,7 @@ Además de definir el **Static ID**, hay tres configuraciones adicionales que pu
 
 Con estas opciones, puedes controlar cómo y cuándo se utilizan los parámetros dentro de la tarea, asegurando que la información requerida se recoja correctamente y sea accesible para quienes gestionen la tarea.
 
-## Configuración de Acciones en la Tarea
+## 6. Configuración de Acciones en la Tarea
 
 Las **acciones** son operaciones específicas que se ejecutan en respuesta a eventos que ocurren durante el flujo de trabajo de una tarea. Estas acciones permiten automatizar ciertas tareas y hacer que el proceso sea más eficiente. Por ejemplo, una acción puede ser el envío de una notificación, la actualización de un campo o la asignación de una nueva tarea a un usuario.
 
@@ -172,7 +172,7 @@ Este enfoque mejora la automatización del proceso, ya que el sistema puede envi
 
 ![image.png](image%2012.png)
 
-### **Enviar Notificación Push: Send Push Notification**
+### ** 6.1. Enviar Notificación Push: Send Push Notification**
 
 La opción **Send Push Notification** permite enviar notificaciones directamente a los usuarios de la aplicación, en lugar de hacerlo por correo electrónico. Este tipo de notificación es especialmente útil cuando queremos alertar a los usuarios sobre eventos importantes dentro de la aplicación, como la aprobación de una tarea.
 
@@ -182,7 +182,7 @@ Las notificaciones push son útiles para mantener a los usuarios actualizados al
 
 ![image.png](image%2013.png)
 
-### On Event: Especificación de Eventos para Ejecutar Acciones
+### 6.2. On Event: Especificación de Eventos para Ejecutar Acciones
 
 La opción **On Event** permite definir que la acción se ejecute cuando ocurra un evento específico relacionado con la tarea. Dependiendo del tipo de tarea y el flujo de trabajo, se pueden seleccionar distintos eventos que activarán la acción.
 
@@ -204,23 +204,23 @@ Existen varios tipos de eventos disponibles, como:
 - **Before Expire (Antes de Vencer):** Ocurre antes de que se alcance la fecha límite de la tarea. Requiere especificar un intervalo de tiempo ISO/SQL.
 - **Expire (Vencimiento):** Se activa cuando la fecha de vencimiento de la tarea se cumple y la tarea expira.
 
-### **Success Message (Mensaje de Éxito)**
+### ** 6.3. Success Message (Mensaje de Éxito)**
 
 El **Success Message** es un mensaje que se muestra cuando una acción se ejecuta correctamente. Este mensaje confirma que la operación solicitada se completó con éxito, proporcionando claridad y asegurando al usuario que el proceso ha sido ejecutado sin problemas.
 
 Es importante personalizar este mensaje para que sea claro y útil para el usuario. Por ejemplo, si la acción es un incremento de salario, el mensaje de éxito podría ser: "El salario de &EMPLOYEE_NAME ha sido actualizado correctamente.”
 
-### **Error Handling (Manejo de Errores)**
+### ** 6.4. Error Handling (Manejo de Errores)**
 
 La pestaña **Error Handling** permite especificar un mensaje que se mostrará si la acción no se ejecuta correctamente. Este mensaje es crucial para informar al administrador sobre el problema que ha ocurrido. El mensaje que introduzcas se guardará automáticamente en el **Task History**, lo que facilita el seguimiento y la depuración de tareas fallidas.
 
 ![image.png](image%2015.png)
 
-### Stop Execution On Error (Detener Ejecución en Caso de Error)
+### 6.5. Stop Execution On Error (Detener Ejecución en Caso de Error)
 
 Cuando la opción **Stop Execution On Error** está activada, la ejecución de la tarea se detendrá inmediatamente en el momento en que ocurra un error. Esta opción es útil cuando quieres asegurarte de que, si se produce una falla durante la ejecución de una acción, el sistema no continúe con el proceso de manera incorrecta. Esto puede ser importante para prevenir errores adicionales y garantizar que el proceso se detenga antes de que se realicen más cambios indeseados.
 
-### Log Messages When (Registrar Mensajes Cuando)
+### 6.6. Log Messages When (Registrar Mensajes Cuando)
 
 La opción **Log Messages When** determina cuándo se deben registrar los mensajes en el **Task History**. Hay cuatro opciones disponibles:
 
@@ -229,7 +229,7 @@ La opción **Log Messages When** determina cuándo se deben registrar los mensaj
 - **Failure**: Solo los mensajes de error serán registrados, lo que puede ser útil para detectar y corregir problemas rápidamente.
 - **All**: Se registrarán tanto los mensajes de éxito como los de error, lo que proporciona un historial completo y detallado de todas las ejecuciones de la tarea.
 
-### Server Side Condition (Condición del Lado del Servidor)
+### 6.7. Server Side Condition (Condición del Lado del Servidor)
 
 La opción **Server Side Condition** permite agregar una condición que debe cumplirse antes de que se ejecute la acción en el servidor. Aquí debes elegir el tipo de condición que deseas aplicar. Esto es útil cuando solo deseas ejecutar ciertas acciones si se cumplen criterios específicos, como la verificación de una variable o el estado de un proceso en curso.
 
@@ -252,7 +252,7 @@ Si deseas que la acción solo se ejecute cuando el usuario actual sea **USER_ONE
 
 Si el usuario que ejecuta la tarea es **USER_ONE**, la acción será ejecutada; de lo contrario, no lo será.
 
-# **Runtime Views for Tasks**  
+# ** 7. Runtime Views for Tasks**  
 
 Aprende sobre las vistas `APEX_TASKS`, `APEX_TASK_COMMENTS`, `APEX_TASK_HISTORY`, `APEX_TASK_PARAMETERS` y `APEX_TASK_PARTICIPANTS`.
 
@@ -269,6 +269,6 @@ Oracle APEX nos proporciona varias vistas que almacenan la configuración de las
 | `APEX_TASK_PARTICIPANTS`       | Lista de participantes en una tarea. Puede diferir de la lista original si los administradores agregan o eliminan participantes. |
 
 
-## Conclusión
+## 8. Conclusión
 
 En resumen, Task Definitions es útil cuando se busca gestionar flujos de trabajo de manera eficiente, asignando tareas, controlando plazos y acciones, y garantizando un seguimiento preciso de las tareas dentro de un proceso automatizado.
