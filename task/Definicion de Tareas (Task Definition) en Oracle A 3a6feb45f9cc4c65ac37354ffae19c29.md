@@ -8,13 +8,13 @@
 4. Asignación de responsables para completar la tarea.
 5. Agrega parámetros.
 6. Configuración de Acciones en la Tarea.
-    1   Enviar Notificación Push: Send Push Notification
-    2   On Event: Especificación de Eventos para Ejecutar Acciones
-    3   Success Message
-    4   Error Handling
-    5   Stop Execution On Error
-    6   Log Messages When
-    7   Server Side Condition
+    1.    Enviar Notificación Push: Send Push Notification
+    2.    On Event: Especificación de Eventos para Ejecutar Acciones
+    3.    Success Message
+    4.    Error Handling
+    5.    Stop Execution On Error
+    6.    Log Messages When
+    7.    Server Side Condition
 7. Runtime Views for Tasks
 8. Conclusión.
 
