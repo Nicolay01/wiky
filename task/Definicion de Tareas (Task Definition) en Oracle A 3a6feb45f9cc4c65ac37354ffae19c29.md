@@ -2,21 +2,21 @@
 
 ## Contenido
 
-- Introducción.
-- Crea una aplicación en tu WorkSpace en Oracle APEX.
-- Especifica el Plazo de tu Tarea.
-- Asignación de responsables para completar la tarea.
-- Agrega parámetros.
-- Configuración de Acciones en la Tarea.
-    -   Enviar Notificación Push: Send Push Notification
-    -   On Event: Especificación de Eventos para Ejecutar Acciones
-    -   Success Message
-    -   Error Handling
-    -   Stop Execution On Error
-    -   Log Messages When
-    -   Server Side Condition
-- Runtime Views for Tasks
-- Conclusión.
+1. Introducción.
+2. Crea una aplicación en tu WorkSpace en Oracle APEX.
+3. Especifica el Plazo de tu Tarea.
+4. Asignación de responsables para completar la tarea.
+5. Agrega parámetros.
+6. Configuración de Acciones en la Tarea.
+    6.1   Enviar Notificación Push: Send Push Notification
+    6.2   On Event: Especificación de Eventos para Ejecutar Acciones
+    6.3   Success Message
+    6.4   Error Handling
+    6.5   Stop Execution On Error
+    6.6   Log Messages When
+    6.7   Server Side Condition
+7. Runtime Views for Tasks
+8. Conclusión.
 
 ## Inicio
 
